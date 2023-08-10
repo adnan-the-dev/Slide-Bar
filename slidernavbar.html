@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Document</title>
+  </head>
+  <style>
+    #bar {
+      height: 100vh;
+      width: 0;
+      left: 0;
+      top: 0;
+      position: fixed;
+      background-color: aqua;
+      visibility: hidden;
+      transition: 0.3s linear;
+    }
+    #menu {
+      font-size: large;
+      font-weight: bold;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    h4:hover {
+      cursor: pointer;
+    }
+    .hide {
+      height: 30px;
+      width: 30px;
+    }
+    .hide-parent {
+      width: 100%;
+      display: flex;
+      justify-content: flex-end;
+    }
+    .home{
+      background-color: blueviolet;
+      padding: 8px 8px 8px 8px;
+
+    }
+    .same:hover{
+      background-color: blueviolet;
+      padding: 8px 8px 8px 8px;
+
+
+    }
+  </style>
+  <body id="blur"  >
+    <div id="bar">
+      <div class="hide-parent" onclick="hideDiv()">
+        <svg
+          class="hide"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          strokeWidth="{1.5}"
+          stroke="currentColor"
+          className="w-6 h-6"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M6 18L18 6M6 6l12 12"
+          />
+        </svg>
+      </div>
+
+      <div id="menu">
+        <h4 class="home">Home</h4>
+        <h4 class="same">Contact</h4>
+        <h4 class="same">Icon</h4>
+        <h4 class="same">Logo</h4>
+      </div>
+    </div>
+    <button id="show" onclick="showDiv()">Show</button>
+    <script>
+      function showDiv() {
+        document.getElementById("bar").style.visibility = "visible";
+
+        document.getElementById("bar").style.width = "250px";
+
+        document.getElementById("show").style.display = "none";
+        document.body.style.backgroundColor = "#7F7F7F";
+      }
+
+      function hideDiv() {
+        document.getElementById("bar").style.visibility = "hidden";
+        document.getElementById("bar").style.width = "0";
+
+        document.getElementById("show").style.display = "inline";
+
+        document.body.style.backgroundColor = "";
+
+      }
+    </script>
+  </body>
+</html>
